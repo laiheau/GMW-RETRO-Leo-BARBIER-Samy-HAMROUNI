@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://dinl7y1uixr5g"]
+
+[ext_resource type="Script" path="res://asteroid.gd" id="1_m1p0e"]
+[ext_resource type="Texture2D" uid="uid://b8pt2hm2uegk1" path="res://asteroid/Asteroid_2.png" id="2_f5pqd"]
+[ext_resource type="Texture2D" uid="uid://2wlyhmtx65os" path="res://asteroid/Asteroid_1.png" id="2_hxdrt"]
+[ext_resource type="Texture2D" uid="uid://ol5eu0wi3qb6" path="res://asteroid/Asteroid_3.png" id="4_cbdpc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvjkc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f5pqd")
+}],
+"loop": true,
+"name": &"asteroid_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hxdrt")
+}],
+"loop": true,
+"name": &"asteroid_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cbdpc")
+}],
+"loop": true,
+"name": &"asteroid_3",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pafug"]
+radius = 24.0208
+
+[node name="asteroid" type="Area2D"]
+script = ExtResource("1_m1p0e")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lvjkc")
+animation = &"asteroid_1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pafug")

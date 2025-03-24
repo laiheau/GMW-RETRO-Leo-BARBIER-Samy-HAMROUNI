@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://byer3dgyarc52"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_klpmy"]
+[ext_resource type="Texture2D" uid="uid://gq7v3tspvrsw" path="res://Spaceships/Spaceships_player.png" id="2_gurtr"]
+[ext_resource type="PackedScene" uid="uid://bvq62enecujff" path="res://bullet.tscn" id="2_jxdsx"]
+[ext_resource type="Texture2D" uid="uid://cnjw8wn77f05i" path="res://addons/health_bar_2d/resources/health_bar_texture.png" id="4_ct4bs"]
+[ext_resource type="Script" path="res://addons/health_bar_2d/health_bar_2d.gd" id="5_tytbs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghdrb"]
+size = Vector2(43, 55)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_klpmy")
+bullet = ExtResource("2_jxdsx")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ghdrb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3)
+scale = Vector2(1.36154, 1.2619)
+texture = ExtResource("2_gurtr")
+
+[node name="HealthBar2D" type="TextureProgressBar" parent="."]
+offset_left = -18.0
+offset_top = 32.0
+offset_right = -5.99997
+offset_bottom = 33.0
+scale = Vector2(3, 3)
+max_value = 3.0
+value = 2.0
+fill_mode = 1
+texture_under = ExtResource("4_ct4bs")
+texture_progress = ExtResource("4_ct4bs")
+tint_under = Color(0.0117647, 0.0117647, 0.0117647, 1)
+tint_over = Color(0.0117647, 0.0117647, 0.0117647, 1)
+tint_progress = Color(0.843137, 0, 0.0352941, 1)
+script = ExtResource("5_tytbs")
+_static = true
+_gradient = true
+_offset = Vector2(-12, 30)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
