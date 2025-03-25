@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://n6w74tpxpip7"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_5hvat"]
+[ext_resource type="Texture2D" uid="uid://by1a3o2gufg8f" path="res://Tiny Tower Free Pack/Characters/Knight.png" id="2_45j2q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j57wx"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m436n"]
+atlas = ExtResource("2_45j2q")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g86of"]
+atlas = ExtResource("2_45j2q")
+region = Rect2(208, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmbkn"]
+atlas = ExtResource("2_45j2q")
+region = Rect2(272, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1p6b"]
+atlas = ExtResource("2_45j2q")
+region = Rect2(336, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kf8t7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m436n")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g86of")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmbkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1p6b")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_qdq33"]
+offsets = PackedFloat32Array(0, 0.837662)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jl3xo"]
+gradient = SubResource("Gradient_qdq33")
+fill = 1
+fill_from = Vector2(0.486239, 0.53211)
+fill_to = Vector2(0.798165, 0.133028)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5hvat")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j57wx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -9)
+sprite_frames = SubResource("SpriteFrames_kf8t7")
+animation = &"run"
+frame_progress = 0.483922
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(2.98438, 1.85938)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_jl3xo")
