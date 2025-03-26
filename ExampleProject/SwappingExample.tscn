@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4lrb4286u5up"]
+
+[ext_resource type="Texture2D" uid="uid://ng84petxracw" path="res://ExampleProject/Orb.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://d35ak66lmippa" path="res://ExampleProject/GrayscaleOrb.png" id="3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4rfw1"]
+metadata/_custom_type_script = "uid://vrs1twpulcy0"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kvwyj"]
+metadata/_custom_type_script = "uid://vrs1twpulcy0"
+
+[node name="Node2D" type="Node2D"]
+
+[node name="OrbGray" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_4rfw1")
+position = Vector2(561, 513)
+texture = ExtResource("3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 167.0
+offset_top = 437.0
+offset_right = 1012.0
+offset_bottom = 463.0
+text = "Grayscale orb colored with multi-row palette. First row is skipped from animation and used only as reference."
+
+[node name="Orb2" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kvwyj")
+position = Vector2(548, 279)
+texture = ExtResource("1")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 212.0
+offset_top = 217.0
+offset_right = 887.0
+offset_bottom = 243.0
+text = "Palette without animation. First row is translated to second row"
