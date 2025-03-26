@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://d4brw60y430vv"]
 
 [ext_resource type="PackedScene" uid="uid://byer3dgyarc52" path="res://Player.tscn" id="1_8mvyl"]
-[ext_resource type="Script" path="res://Enemy_spawner.gd" id="2_rqkxu"]
+[ext_resource type="Script" uid="uid://w4fhfmgmbk2p" path="res://Enemy_spawner.gd" id="2_rqkxu"]
 [ext_resource type="PackedScene" uid="uid://bi7ju0i6hrfjc" path="res://enemy.tscn" id="3_yrm04"]
-[ext_resource type="Script" path="res://Label.gd" id="4_q10w1"]
-[ext_resource type="Script" path="res://asteroid_spawner.gd" id="4_vxg6g"]
+[ext_resource type="Script" uid="uid://legwmnn4gjuw" path="res://Label.gd" id="4_q10w1"]
+[ext_resource type="Script" uid="uid://csnal5igllds4" path="res://asteroid_spawner.gd" id="4_vxg6g"]
 [ext_resource type="PackedScene" uid="uid://dinl7y1uixr5g" path="res://asteroid.tscn" id="5_e2tb4"]
 [ext_resource type="Material" uid="uid://bt3gg2tiv070s" path="res://blue_filter.tres" id="7_2tlet"]
-[ext_resource type="Script" path="res://shader_rect.gd" id="8_00dqv"]
+[ext_resource type="Script" uid="uid://dqansvu2l1u33" path="res://shader_rect.gd" id="8_00dqv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yfa07"]
 font_size = 25

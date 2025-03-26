@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=4 uid="uid://c0k8utwfwuvse"]
+[gd_scene load_steps=7 format=4 uid="uid://c0k8utwfwuvse"]
 
 [ext_resource type="Texture2D" uid="uid://d4jqwd4ds8qey" path="res://Castle_Platformer_Tileset/castle-tileset.png" id="1_iwgr5"]
 [ext_resource type="PackedScene" uid="uid://n6w74tpxpip7" path="res://player.tscn" id="2_6c66c"]
 [ext_resource type="Material" uid="uid://bt3gg2tiv070s" path="res://blue_filter.tres" id="3_nyoig"]
-[ext_resource type="Script" path="res://shader_rect.gd" id="4_aq7nh"]
+[ext_resource type="Script" uid="uid://dqansvu2l1u33" path="res://shader_rect.gd" id="4_aq7nh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i3dno"]
 texture = ExtResource("1_iwgr5")
@@ -143,14 +143,7 @@ texture = ExtResource("1_iwgr5")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i3dno")
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n23u2"]
-polygon = PackedVector2Array(-6.36649, 5.91596, 6.3665, 5.91596, 6.3665, 6.99159, -6.36649, 6.99159)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vldu6"]
-polygon = PackedVector2Array(16.4189, 13.4454, 10.3874, 13.4454, 10.3874, 10.7563, 10.3874, 6.99159, 16.4189, 6.99159)
-
 [node name="Main" type="Node2D"]
-position = Vector2(418, 250)
 
 [node name="back_layer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAIAAIAAAACAAUAAAAHAAIAAAABAAUAAAAGAAIAAAAAAAUAAAAFAAIAAAAFAAUAAAAEAAIAAAAEAAUAAAADAAIAAAADAAUAAAACAAIAAAACAAUAAAABAAIAAAABAAUAAAAAAAIAAAAAAAUAAAAAAAMAAAAAAAYAAAABAAMAAAABAAYAAAACAAMAAAACAAYAAAADAAMAAAADAAYAAAAEAAMAAAAEAAYAAAAFAAMAAAAFAAYAAAAGAAMAAAAAAAYAAAAHAAMAAAABAAYAAAAIAAMAAAACAAYAAAAAAP//AAADAAsAAAAAAP7/AAADAAsAAAAAAP3/AAADAAsAAAAAAPz/AAADAAsAAAABAPz/AAADAAsAAAABAP3/AAADAAsAAAABAP7/AAADAAsAAAACAP7/AAADAAsAAAACAP//AAADAAsAAAACAP3/AAADAAsAAAACAPz/AAADAAsAAAADAPz/AAADAAsAAAADAP3/AAADAAsAAAADAP7/AAADAAsAAAADAP//AAADAAsAAAAEAP//AAAAAAwAAAAFAP//AAADAAsAAAAFAP7/AAADAAsAAAAEAP7/AAAAAAsAAAAEAP3/AAADAAsAAAAFAP3/AAADAAsAAAAFAPz/AAADAAsAAAAEAPz/AAADAAsAAAAGAPz/AAADAAsAAAAGAP3/AAADAAsAAAAHAPz/AAADAAsAAAAHAP3/AAADAAsAAAAHAP7/AAADAAsAAAAHAP//AAAAAAMAAAAIAP//AAABAAMAAAAIAP7/AAABAAMAAAAIAP3/AAADAAsAAAAIAPz/AAADAAsAAAAJAPz/AAADAAsAAAAKAPz/AAADAAsAAAAKAP3/AAADAAsAAAAJAP3/AAABAAMAAAAJAP7/AAADAAsAAAAKAP7/AAADAAsAAAAKAP//AAADAAsAAAAKAAAAAAADAAsAAAAKAAEAAAADAAsAAAABAP//AAADAAsAAAABAAAAAAADAAsAAAABAAEAAAADAAsAAAAAAAEAAAADAAsAAAAAAAAAAAADAAsAAAACAAAAAAADAAsAAAADAAAAAAADAAsAAAAEAAAAAAADAAsAAAAFAAAAAAADAAsAAAAGAAAAAAADAAsAAAAGAP//AAADAAsAAAAGAP7/AAADAAsAAAAJAP//AAADAAsAAAAJAAAAAAADAAsAAAAIAAAAAAADAAsAAAAHAAAAAAADAAsAAAAIAAEAAAADAAsAAAAJAAEAAAADAAsAAAAHAAEAAAADAAsAAAAGAAEAAAADAAsAAAAFAAEAAAADAAsAAAAEAAEAAAADAAsAAAADAAEAAAADAAsAAAACAAEAAAADAAsAAAAJAAIAAAADAAsAAAAJAAMAAAADAAsAAAAKAAMAAAADAAsAAAAKAAIAAAADAAsAAAA=")
@@ -168,18 +161,8 @@ position = Vector2(50, -29)
 [node name="ShaderRect" type="ColorRect" parent="CanvasLayer"]
 material = ExtResource("3_nyoig")
 offset_left = -5.0
-offset_top = 20.0
-offset_right = 1147.0
-offset_bottom = 668.0
+offset_top = -2.0
+offset_right = 1155.0
+offset_bottom = 650.0
 color = Color(0.0980392, 0, 0.156863, 1)
 script = ExtResource("4_aq7nh")
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-position = Vector2(104, -26)
-scale = Vector2(2.98438, 1.85938)
-occluder = SubResource("OccluderPolygon2D_n23u2")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(104, -26)
-scale = Vector2(2.98438, 1.85938)
-occluder = SubResource("OccluderPolygon2D_vldu6")

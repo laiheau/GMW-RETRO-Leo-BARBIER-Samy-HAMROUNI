@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 100.0
 const JUMP_VELOCITY = -200
+const CLIMB_VELOCITY = -100
 
 
 func _physics_process(delta: float) -> void:
@@ -24,5 +25,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	var tile_map_layer = get_node("../front_layer")
+	var tile_atlas_pos = tile_map_layer.get_cell_atlas_coords(tile_map_layer.local_to_map(position))
+	if Input.is_action_pressed("ui_accept") and (tile_atlas_pos == Vector2i(0, 7) or tile_atlas_pos == Vector2i(0, 8)):
+		velocity.y = CLIMB_VELOCITY
 	move_and_slide()

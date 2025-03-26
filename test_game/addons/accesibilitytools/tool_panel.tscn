@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bku3gp65xgd4e"]
 
-[ext_resource type="Script" path="res://addons/accesibilitytools/tool_panel.gd" id="1_fnqcc"]
-[ext_resource type="Script" path="res://addons/accesibilitytools/addon_resource_picker.gd" id="2_s0wbp"]
+[ext_resource type="Script" uid="uid://b0qdprdxvy11f" path="res://addons/accesibilitytools/tool_panel.gd" id="1_fnqcc"]
+[ext_resource type="Script" uid="uid://dqen1ahyov8i5" path="res://addons/accesibilitytools/addon_resource_picker.gd" id="2_s0wbp"]
 
 [node name="ToolPanel" type="ScrollContainer"]
 offset_right = 191.0

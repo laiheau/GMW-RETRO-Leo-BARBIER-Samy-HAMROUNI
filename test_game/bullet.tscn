@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvq62enecujff"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_uiqls"]
+[ext_resource type="Script" uid="uid://bf4fdbmeeda16" path="res://bullet.gd" id="1_uiqls"]
 [ext_resource type="Texture2D" uid="uid://dsh23qawure4g" path="res://Lunar Lander Assets 24-11-20/Lunar Lander Upload/Effects/Fx_02.png" id="2_c3eqa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0yru6"]

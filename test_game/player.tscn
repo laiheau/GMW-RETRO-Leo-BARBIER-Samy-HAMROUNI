@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://n6w74tpxpip7"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_5hvat"]
+[ext_resource type="Script" uid="uid://b1lcek42bn7ve" path="res://character_body_2d.gd" id="1_5hvat"]
 [ext_resource type="Texture2D" uid="uid://by1a3o2gufg8f" path="res://Tiny Tower Free Pack/Characters/Knight.png" id="2_45j2q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j57wx"]
