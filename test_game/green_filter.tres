@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://qcjvsrhep6yc"]
+
+[ext_resource type="Shader" uid="uid://dwnq5hf30f1vy" path="res://green.gdshader" id="1_o2mpf"]
+
+[resource]
+shader = ExtResource("1_o2mpf")
+shader_parameter/black_color = Color(0.372549, 0.435294, 0.396078, 1)
+shader_parameter/green1_color = Color(0.501961, 0.552941, 0.486275, 1)
+shader_parameter/green2_color = Color(0.611765, 0.662745, 0.52549, 1)
+shader_parameter/green3_color = Color(0.788235, 0.854902, 0.74902, 1)
+shader_parameter/threshold1 = 0.2
+shader_parameter/threshold2 = 0.3
+shader_parameter/threshold3 = 0.6

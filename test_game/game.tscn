@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4brw60y430vv"]
+
+[ext_resource type="PackedScene" uid="uid://byer3dgyarc52" path="res://Player.tscn" id="1_8mvyl"]
+[ext_resource type="Script" uid="uid://w4fhfmgmbk2p" path="res://Enemy_spawner.gd" id="2_rqkxu"]
+[ext_resource type="PackedScene" uid="uid://bi7ju0i6hrfjc" path="res://enemy.tscn" id="3_yrm04"]
+[ext_resource type="Script" uid="uid://legwmnn4gjuw" path="res://Label.gd" id="4_q10w1"]
+[ext_resource type="Script" uid="uid://csnal5igllds4" path="res://asteroid_spawner.gd" id="4_vxg6g"]
+[ext_resource type="PackedScene" uid="uid://dinl7y1uixr5g" path="res://asteroid.tscn" id="5_e2tb4"]
+[ext_resource type="Material" uid="uid://bt3gg2tiv070s" path="res://blue_filter.tres" id="7_2tlet"]
+[ext_resource type="Script" uid="uid://dqansvu2l1u33" path="res://shader_rect.gd" id="8_00dqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yfa07"]
+font_size = 25
+
+[node name="Game" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1372.0
+offset_bottom = 753.0
+color = Color(0.135619, 0.121801, 0.189987, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_8mvyl")]
+position = Vector2(372, 325)
+
+[node name="Enemy_spawner" type="Node2D" parent="."]
+script = ExtResource("2_rqkxu")
+mob_scene = ExtResource("3_yrm04")
+
+[node name="mob_spawn" type="Timer" parent="Enemy_spawner"]
+wait_time = 2.0
+autostart = true
+
+[node name="Label" type="Label" parent="Enemy_spawner"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "score : 0"
+label_settings = SubResource("LabelSettings_yfa07")
+script = ExtResource("4_q10w1")
+
+[node name="asteroid_spawner" type="Node2D" parent="."]
+script = ExtResource("4_vxg6g")
+asteroid_scene = ExtResource("5_e2tb4")
+
+[node name="asteroid_spawn" type="Timer" parent="asteroid_spawner"]
+wait_time = 3.0
+autostart = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="ShaderRect" type="ColorRect" parent="Camera2D/CanvasLayer"]
+material = ExtResource("7_2tlet")
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0980392, 0, 0.156863, 1)
+script = ExtResource("8_00dqv")
+
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
+[connection signal="timeout" from="Enemy_spawner/mob_spawn" to="Enemy_spawner" method="_on_mob_spawn_timeout"]
+[connection signal="timeout" from="asteroid_spawner/asteroid_spawn" to="asteroid_spawner" method="_on_asteroid_spawn_timeout"]
