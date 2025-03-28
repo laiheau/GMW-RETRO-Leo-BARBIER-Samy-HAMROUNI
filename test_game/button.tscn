@@ -26,7 +26,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b4nf3"]
 size = Vector2(16, 16)
 
-[node name="button" type="Area2D"]
+[node name="button" type="Area2D" groups=["button"]]
 script = ExtResource("1_m36l0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -34,3 +34,5 @@ sprite_frames = SubResource("SpriteFrames_vxja4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b4nf3")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

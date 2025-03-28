@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwksxdacnafkj"]
+[gd_scene load_steps=3 format=3 uid="uid://buu1ixqba363d"]
 
-[ext_resource type="Script" uid="uid://b8evwytuxfyme" path="res://lava.gd" id="1_34hvj"]
+[ext_resource type="Script" uid="uid://dwlndqupa8puv" path="res://lava.gd" id="1_34hvj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34hvj"]
 size = Vector2(1157, 651)
@@ -16,3 +16,4 @@ shape = SubResource("RectangleShape2D_34hvj")
 debug_color = Color(0.980899, 0.137378, 1.92523e-07, 0.42)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

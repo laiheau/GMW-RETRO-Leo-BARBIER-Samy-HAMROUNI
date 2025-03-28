@@ -1,10 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://ixyotrwfa8k"]
+[gd_scene load_steps=39 format=3 uid="uid://hbv7fyivtwbi"]
 
-[ext_resource type="Script" uid="uid://cnaydbx2eea8o" path="res://character_body_2d.gd" id="1_f50pn"]
-[ext_resource type="Texture2D" uid="uid://md3bhopwk3df" path="res://Assets/Soldier/Soldier-Idle.png" id="2_ij6vw"]
-[ext_resource type="Texture2D" uid="uid://cnqm5a2j7ubsq" path="res://Assets/Soldier/Soldier-Attack01.png" id="2_lhvu3"]
-[ext_resource type="Texture2D" uid="uid://dpiyisl6ykaip" path="res://Assets/Soldier/Soldier-Attack02.png" id="3_4sjlk"]
-[ext_resource type="Texture2D" uid="uid://c5ngt02gj0mu0" path="res://Assets/Soldier/Soldier-Walk.png" id="3_ghijl"]
+[ext_resource type="Script" uid="uid://b1lcek42bn7ve" path="res://character_body_2d.gd" id="1_f50pn"]
+[ext_resource type="Texture2D" uid="uid://cdjw8nkollusw" path="res://Assets/Soldier/Soldier-Idle.png" id="2_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://dtclixluskhrj" path="res://Assets/Soldier/Soldier-Attack01.png" id="2_lhvu3"]
+[ext_resource type="Texture2D" uid="uid://biolghodktxkl" path="res://Assets/Soldier/Soldier-Attack02.png" id="3_4sjlk"]
+[ext_resource type="Texture2D" uid="uid://dujnn5g863lt2" path="res://Assets/Soldier/Soldier-Walk.png" id="3_ghijl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_186t8"]
 radius = 5.0
@@ -250,7 +250,6 @@ frame = 5
 frame_progress = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-visible = false
 energy = 0.5
 shadow_enabled = true
 shadow_filter = 2

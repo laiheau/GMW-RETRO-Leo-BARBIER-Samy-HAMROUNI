@@ -1,22 +1,31 @@
 extends Area2D
 
-@export_enum("Dimension 1", "Dimension 2") var dimension: int
+enum DIMS {DAY, NIGHT}
+@export var dimension: DIMS = DIMS.DAY
+var collide_with_player = false
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass
+	get_node("../CanvasLayer/ShaderRect").dimension_changed.connect(_on_shader_rect_dimension_changed)
+	if self.dimension == DIMS.DAY:
+		$AnimatedSprite2D.play("default")
+	else:
+		$AnimatedSprite2D.play("hidden")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if self.collide_with_player and $AnimatedSprite2D.animation != "hidden":
+		self.queue_free()
 
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if $AnimatedSprite2D.animation == "hidden":
-		return
-	if body.name == "Player":
-		self.queue_free()
+	if body.name == "player":
+		collide_with_player = true
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.name == "player":
+		collide_with_player = false
+
 
 func _on_shader_rect_dimension_changed(dimension) -> void:
 	if self.dimension == dimension :
